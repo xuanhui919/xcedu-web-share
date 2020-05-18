@@ -1,0 +1,34 @@
+{
+  "name": "@xcedu/web-share",
+  "version": "1.0.1",
+  "description": "晓窗科技教育一体化平台共享模块",
+  "main": "dist/share.min.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/xiaochuang-edu/xcedu-web-share.git"
+  },
+  "files": [
+    "dist/*.js"
+  ],
+  "keywords": [
+    "share",
+    "single-spa"
+  ],
+  "author": "Xuan Hui <541951523@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiaochuang-edu/xcedu-web-share/issues"
+  },
+  "homepage": "https://github.com/xiaochuang-edu/xcedu-web-share#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "rollup": "^2.8.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^5.3.0"
+  }
+}
