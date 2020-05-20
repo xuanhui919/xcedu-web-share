@@ -6,10 +6,10 @@ import {terser} from 'rollup-plugin-terser'
 export default {
   input: 'index.js',
   output: [{
-    file: 'dist/share.js',
+    file: 'dist/utils.js',
     format: 'cjs'
   }, {
-    file: 'dist/share.min.js',
+    file: 'dist/utils.min.js',
     format: 'cjs',
     plugins: [terser()]
   }],
