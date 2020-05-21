@@ -2,7 +2,7 @@ const TOKEN_KEY = 'token'
 const REFRESH_TOKEN_KEY = 'refreshToken'
 
 const getItem = key => (localStorage.getItem(key) || '')
-const setItem = (key, value) => localStorage(key, value)
+const setItem = (key, value) => localStorage.setItem(key, value)
 
 const getToken = () => {
   const token = getItem(TOKEN_KEY)

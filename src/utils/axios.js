@@ -31,7 +31,7 @@ const retry = (config) => {
 }
 
 const isTokenExpries = response => {
-  return response.status === 401 && response.code === 403 && getRefreshToken()
+  return response.status === 401 && response.request.response.code === 403 && getRefreshToken()
 }
 
 instance.interceptors.response.use(response => {
@@ -43,6 +43,7 @@ instance.interceptors.response.use(response => {
     return retry(error.config)
   } else {
     clearToken()
+    window.singleSpa.navigateToUrl('/user/login')
     return Promise.reject(error)
   }
 })
