@@ -42,8 +42,10 @@ instance.interceptors.response.use(response => {
   if (isTokenExpries(error.response)) {
     return retry(error.config)
   } else {
-    clearToken()
-    window.singleSpa.navigateToUrl('/user/login')
+    if(error.response.request.response.code !== 500 ){
+      clearToken()
+      window.singleSpa.navigateToUrl('/user/login')
+    }
     return Promise.reject(error)
   }
 })

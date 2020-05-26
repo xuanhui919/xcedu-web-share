@@ -2,7 +2,7 @@
   "name": "@xcedu/web-share",
   "version": "1.0.3",
   "description": "晓窗科技教育一体化平台共享模块",
-  "main": "dist/utils.min.js",
+  "main": "dist/utils.js",
   "scripts": {
     "build": "rimraf dist && rollup -c"
   },
