@@ -42,7 +42,7 @@ instance.interceptors.response.use(response => {
   if (isTokenExpries(error.response)) {
     return retry(error.config)
   } else {
-    if(error.response.status !== 500 || error.response.status !== 200 || error.response.status !== 403){
+    if(error.response.status !== 500 && error.response.status !== 200 && error.response.status !== 403){
       clearToken()
       window.singleSpa.navigateToUrl('/user/login')
     }
