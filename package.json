@@ -1,6 +1,6 @@
 {
   "name": "@xcedu/web-share",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "晓窗科技教育一体化平台共享模块",
   "main": "dist/utils.js",
   "scripts": {
