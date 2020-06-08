@@ -23,7 +23,7 @@ instance.interceptors.request.use(config => {
 })
 
 const retry = (config) => {
-  return instance.post('/sys/refreshToken', { refreshToken: getRefreshToken() }).then(res => {
+  return instance.post('/sysUserLogin/refreshToken', { refreshToken: getRefreshToken() }).then(res => {
     setToken(res.access_token)
     setRefreshToken(res.refresh_token)
     return instance.request(config)
@@ -42,7 +42,7 @@ instance.interceptors.response.use(response => {
   if (isTokenExpries(error.response)) {
     return retry(error.config)
   } else {
-    if(error.response.status !== 500 && error.response.status !== 200 && error.response.status !== 403){
+    if(error.response.status === 500 && error.response.status !== 200 && error.response.status !== 403){
       clearToken()
       window.singleSpa.navigateToUrl('/user/login')
     }
