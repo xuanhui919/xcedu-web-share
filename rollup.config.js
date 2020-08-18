@@ -1,6 +1,7 @@
 // rollup.config.js
 import resolve from '@rollup/plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
+import vue from 'rollup-plugin-vue'
 import {terser} from 'rollup-plugin-terser'
 
 export default {
@@ -15,6 +16,9 @@ export default {
   }],
   plugins: [
     resolve(),
+    vue({
+      css: true
+    }),
     babel({
       exclude: 'node_modules/**' // only transpile our source code
     })
